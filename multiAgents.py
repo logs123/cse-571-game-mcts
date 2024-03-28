@@ -15,6 +15,8 @@
 from util import manhattanDistance
 from game import Directions
 import random, util
+from mctsAgent import MCTSAgent
+from improvedMctsAgent import ImprovedMCTSAgent
 
 from game import Agent
 
