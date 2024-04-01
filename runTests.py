@@ -2,102 +2,152 @@ import os
 import subprocess
 import sys
 import string
+import time
 
-f = open("output4.txt", 'w')
+f = open("output-MCTSAgent.txt", 'w')
 
-proc = subprocess.Popen(["python pacman.py -p MCTSAgent -l smallClassic -q -n 5"], stdout=subprocess.PIPE, shell=True)
+start_time = time.time()
+proc = subprocess.Popen(["python pacman.py -p MCTSAgent -l smallClassic -q -n 10 -k 1"], stdout=subprocess.PIPE, shell=True)
 (out, err) = proc.communicate()
-output= "MCTSAgent Small Map------\n"
+end_time = time.time()
+output= "\nMCTSAgent Small Map 1 Ghost------\n"
 out=out.decode("utf-8")
+execution_time = end_time - start_time
 output+=out
+output+="\nExecution time:"+ str(execution_time)+ "seconds"
 print(output)
 f.write(output)
 
-proc = subprocess.Popen(["python pacman.py -p MCTSAgent -l mediumClassic -q -n 5"], stdout=subprocess.PIPE, shell=True)
+start_time = time.time()
+proc = subprocess.Popen(["python pacman.py -p MCTSAgent -l mediumClassic -q -n 10 -k 1"], stdout=subprocess.PIPE, shell=True)
 (out, err) = proc.communicate()
-output= "\nMCTSAgent Medium Map------\n"
+end_time = time.time()
+output= "\nMCTSAgent Medium Map 1 Ghost------\n"
 out=out.decode("utf-8")
+execution_time = end_time - start_time
 output+=out
+output+="\nExecution time:"+ str(execution_time)+ "seconds"
 print(output)
 f.write(output)
 
-proc = subprocess.Popen(["python pacman.py -p MCTSAgent -l originalClassic -q -n 2"], stdout=subprocess.PIPE, shell=True)
+start_time = time.time()
+proc = subprocess.Popen(["python pacman.py -p MCTSAgent -l smallClassic -q -n 10 -k 3"], stdout=subprocess.PIPE, shell=True)
 (out, err) = proc.communicate()
-output= "\nMCTSAgent Original Map------\n"
+end_time = time.time()
+output= "\nMCTSAgent Small Map 3 Ghost------\n"
 out=out.decode("utf-8")
+execution_time = end_time - start_time
 output+=out
+output+="\nExecution time:"+ str(execution_time)+ "seconds"
 print(output)
 f.write(output)
 
-proc = subprocess.Popen(["python pacman.py -p ImprovedMCTSAgent -l smallClassic -q -n 5"], stdout=subprocess.PIPE, shell=True)
+start_time = time.time()
+proc = subprocess.Popen(["python pacman.py -p MCTSAgent -l mediumClassic -q -n 10 -k 3"], stdout=subprocess.PIPE, shell=True)
 (out, err) = proc.communicate()
-output= "ImprovedMCTSAgent Small Map------\n"
+end_time = time.time()
+output= "\nMCTSAgent Medium Map 3 Ghost------\n"
 out=out.decode("utf-8")
+execution_time = end_time - start_time
 output+=out
+output+="\nExecution time:"+ str(execution_time)+ "seconds"
 print(output)
 f.write(output)
 
-proc = subprocess.Popen(["python pacman.py -p ImprovedMCTSAgent -l mediumClassic -q -n 5"], stdout=subprocess.PIPE, shell=True)
+start_time = time.time()
+proc = subprocess.Popen(["python pacman.py -p AlphaBetaAgent -l smallClassic -q -n 10 -k 1"], stdout=subprocess.PIPE, shell=True)
 (out, err) = proc.communicate()
-output= "\nImprovedMCTSAgent Medium Map------\n"
+end_time = time.time()
+output= "\nAlphaBetaAgent Small Map 1 Ghost------\n"
 out=out.decode("utf-8")
+execution_time = end_time - start_time
 output+=out
+output+="\nExecution time:"+ str(execution_time)+ "seconds"
 print(output)
 f.write(output)
 
-proc = subprocess.Popen(["python pacman.py -p ImprovedMCTSAgent -l originalClassic -q -n 2"], stdout=subprocess.PIPE, shell=True)
+start_time = time.time()
+proc = subprocess.Popen(["python pacman.py -p AlphaBetaAgent -l mediumClassic -q -n 10 -k 1"], stdout=subprocess.PIPE, shell=True)
 (out, err) = proc.communicate()
-output= "\nImprovedMCTSAgent Original Map------\n"
+end_time = time.time()
+output= "\nAlphaBetaAgent Medium Map 1 Ghost------\n"
 out=out.decode("utf-8")
+execution_time = end_time - start_time
 output+=out
+output+="\nExecution time:"+ str(execution_time)+ "seconds"
 print(output)
 f.write(output)
 
-proc = subprocess.Popen(["python pacman.py -p AlphaBetaAgent -l smallClassic -q -n 20"], stdout=subprocess.PIPE, shell=True)
+start_time = time.time()
+proc = subprocess.Popen(["python pacman.py -p AlphaBetaAgent -l smallClassic -q -n 10 -k 3"], stdout=subprocess.PIPE, shell=True)
 (out, err) = proc.communicate()
-output= "\nAlphaBetaAgent Small Map------\n"
+end_time = time.time()
+output= "\nAlphaBetaAgent Small Map 3 Ghost------\n"
 out=out.decode("utf-8")
+execution_time = end_time - start_time
 output+=out
+output+="\nExecution time:"+ str(execution_time)+ "seconds"
 print(output)
 f.write(output)
 
-proc = subprocess.Popen(["python pacman.py -p AlphaBetaAgent -l mediumClassic -q -n 15"], stdout=subprocess.PIPE, shell=True)
+start_time = time.time()
+proc = subprocess.Popen(["python pacman.py -p AlphaBetaAgent -l mediumClassic -q -n 10 -k 3"], stdout=subprocess.PIPE, shell=True)
 (out, err) = proc.communicate()
-output= "\nAlphaBetaAgent Medium Map------\n"
+end_time = time.time()
+output= "\nAlphaBetaAgent Medium Map 3 Ghost------\n"
 out=out.decode("utf-8")
+execution_time = end_time - start_time
 output+=out
+output+="\nExecution time:"+ str(execution_time)+ "seconds"
 print(output)
 f.write(output)
 
-proc = subprocess.Popen(["python pacman.py -p AlphaBetaAgent -l originalClassic -q -n 5"], stdout=subprocess.PIPE, shell=True)
+start_time = time.time()
+proc = subprocess.Popen(["python pacman.py -p ExpectimaxAgent -l smallClassic -q -n 10 -k 1"], stdout=subprocess.PIPE, shell=True)
 (out, err) = proc.communicate()
-output= "\nAlphaBetaAgent Original Map------\n"
+end_time = time.time()
+output= "\nExpectimaxAgent Small Map 1 Ghost------\n"
 out=out.decode("utf-8")
+execution_time = end_time - start_time
 output+=out
+output+="\nExecution time:"+ str(execution_time)+ "seconds"
 print(output)
 f.write(output)
 
-proc = subprocess.Popen(["python pacman.py -p ExpectimaxAgent -l smallClassic -q -n 20"], stdout=subprocess.PIPE, shell=True)
+start_time = time.time()
+proc = subprocess.Popen(["python pacman.py -p ExpectimaxAgent -l mediumClassic -q -n 10 -k 1"], stdout=subprocess.PIPE, shell=True)
 (out, err) = proc.communicate()
-output= "\nExpectimaxAgent Small Map------\n"
+end_time = time.time()
+output= "\nExpectimaxAgent Medium Map 1 Ghost------\n"
 out=out.decode("utf-8")
+execution_time = end_time - start_time
 output+=out
+output+="\nExecution time:"+ str(execution_time)+ "seconds"
 print(output)
 f.write(output)
 
-proc = subprocess.Popen(["python pacman.py -p ExpectimaxAgent -l mediumClassic -q -n 15"], stdout=subprocess.PIPE, shell=True)
+start_time = time.time()
+proc = subprocess.Popen(["python pacman.py -p ExpectimaxAgent -l smallClassic -q -n 10 -k 3"], stdout=subprocess.PIPE, shell=True)
 (out, err) = proc.communicate()
-output= "\nExpectimaxAgent Medium Map------\n"
+end_time = time.time()
+output= "\nExpectimaxAgent Small Map 3 Ghost------\n"
 out=out.decode("utf-8")
+execution_time = end_time - start_time
 output+=out
+output+="\nExecution time:"+ str(execution_time)+ "seconds"
 print(output)
 f.write(output)
 
-proc = subprocess.Popen(["python pacman.py -p ExpectimaxAgent -l originalClassic -q -n 5"], stdout=subprocess.PIPE, shell=True)
+start_time = time.time()
+proc = subprocess.Popen(["python pacman.py -p ExpectimaxAgent -l mediumClassic -q -n 10 -k 3"], stdout=subprocess.PIPE, shell=True)
 (out, err) = proc.communicate()
-output= "\nExpectimaxAgent Original Map------\n"
+end_time = time.time()
+output= "\nExpectimaxAgent Medium Map 3 Ghost------\n"
 out=out.decode("utf-8")
+execution_time = end_time - start_time
 output+=out
+output+="\nExecution time:"+ str(execution_time)+ "seconds"
 print(output)
 f.write(output)
+
 f.close()
